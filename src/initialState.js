@@ -101,7 +101,7 @@ export const initialPerformanceState = {
     },
 
     {
-      name: 'Алейникова Вероника Дмитриевна',
+      name: 'Васильева Анна Игоревна',
       performance: {
         classes: [
           {

@@ -59,3 +59,30 @@
   min-width: 16rem;
   justify-content: start;
 }
+
+.modal {
+  position: absolute;
+  background: #0e3232;
+  color: #fff;
+  padding: 1.3rem;
+  border-radius: .5rem;
+  height: 17.5rem;
+  width: 41.5rem;
+  font-family: 'Manrope', sans-serif;
+}
+
+.modalHeader {
+  letter-spacing: .045rem;
+  margin: 0;
+}
+
+.modalParagraphs {
+  display: flex;
+  justify-content: space-between;
+  margin: .85rem 0;
+}
+
+.modalUsername,
+.modalDate {
+  font-weight: bold;
+}

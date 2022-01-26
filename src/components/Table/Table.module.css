@@ -24,7 +24,7 @@
   justify-content: center;
 }
 
-.bodyCell:hover {
+.studentScores:hover {
   background: #7671dd;
   color: #fff;
   font-weight: bold;

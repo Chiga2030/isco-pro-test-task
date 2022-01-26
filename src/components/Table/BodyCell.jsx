@@ -12,7 +12,11 @@ const BodyCell = ({
         && study.name === classesName[index]))
       .map((study, index) => (
         <div
-          className={ `${styles.bodyCell} ${styles.study}` }
+          className={ `
+            ${styles.bodyCell}
+            ${styles.study}
+            ${styles.studentScores}
+          ` }
           key={ String(index + Date.now()) }
         >
           { study.score }

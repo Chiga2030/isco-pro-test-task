@@ -5,23 +5,19 @@ const Table = ({
   date = '21.11.2021',
   classesList,
   studentsPerformance,
-}) => {
-  console.log();
-
-  return (
-    <div className={ styles.wrapper }>
-      <Header date={ date } classesList={ classesList } />
-      { studentsPerformance.students.map((student, index) => (
-        <TableBody
-          date={ date }
-          classesName={ classesList.classes.map(classes => classes.name) }
-          student={ student }
-          key={ String(index + Date.now()) }
-        />
-      )) }
-    </div>
-  );
-};
+}) => (
+  <div className={ styles.wrapper }>
+    <Header date={ date } classesList={ classesList } />
+    { studentsPerformance.students.map((student, index) => (
+      <TableBody
+        date={ date }
+        classesName={ classesList.classes.map(classes => classes.name) }
+        student={ student }
+        key={ String(index + Date.now()) }
+      />
+    )) }
+  </div>
+);
 
 
 const Header = ({
@@ -81,24 +77,20 @@ const BodyCell = ({
   date,
   classesName,
   studentPerformance,
-}) => {
-  console.log(classesName);
-  console.log('here - ', studentPerformance);
-  return (
-    <>
-      { studentPerformance.classes
-        .filter((study, index) => (study.date === date
-          && study.name === classesName[index]))
-        .map((study, index) => (
-          <div
-            className={ `${styles.bodyCell} ${styles.study}` }
-            key={ String(index + Date.now()) }
-          >
-            { study.score }
-          </div>)) }
-    </>
-  );
-};
+}) => (
+  <>
+    { studentPerformance.classes
+      .filter((study, index) => (study.date === date
+        && study.name === classesName[index]))
+      .map((study, index) => (
+        <div
+          className={ `${styles.bodyCell} ${styles.study}` }
+          key={ String(index + Date.now()) }
+        >
+          { study.score }
+        </div>)) }
+  </>
+);
 
 
 export default Table;

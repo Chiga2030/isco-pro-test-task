@@ -1,0 +1,40 @@
+.wrapper {
+  background: #cfcfcf;
+  width: fit-content;
+  padding: .2rem;
+  margin: auto;
+}
+
+.header,
+.tableBody {
+  display: flex;
+}
+
+.headerCell,
+.bodyCell {
+  padding: 1rem;
+  margin: .1rem;
+  margin-right: .05rem;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bodyCell {
+  justify-content: center;
+}
+
+.study {
+  flex-grow: 1;
+}
+
+.studyName {
+  margin-right: .5rem;
+  word-break: break-all;
+  max-width: 6rem;
+}
+
+.studentName {
+  width: 16rem;
+  justify-content: start;
+}

@@ -24,6 +24,13 @@
   justify-content: center;
 }
 
+.bodyCell:hover {
+  background: #7671dd;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .study {
   flex-grow: 1;
 }

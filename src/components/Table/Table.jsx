@@ -149,6 +149,15 @@ const Modal = ({
             onClick={ event => event.target.select() }
             onKeyUp={ event => event.target.select() }
           />
+
+          <div className={ styles.modalButtonWrapper }>
+            <button
+              className={ styles.modalButton }
+              type="button"
+            >
+              Поставить отметку
+            </button>
+          </div>
         </form>
       </main>
     </div>

@@ -111,4 +111,32 @@
   box-shadow: 0 0 .5rem #00000080;
   padding: 0 .9rem;
   font-size: 1.2rem;
+  margin-bottom: .9rem;
+}
+
+.modalButtonWrapper {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modalButton {
+  width: 12.8rem;
+  height: 4rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 0;
+  background: #7671dd;
+  color: #fff;
+  transition: transform .1s ease-in-out;
+}
+
+.modalButton:hover {
+  background: #3934a3;
+}
+
+.modalButton:active {
+  transform: translateY(.1rem);
 }

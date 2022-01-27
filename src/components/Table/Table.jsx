@@ -53,7 +53,10 @@ const Table = ({
 
   return (
     <div className={ styles.wrapper }>
-      <Modal coordinates={ coordinates } currentUser={ currentUser } />
+      <Modal
+        coordinates={ coordinates }
+        currentUser={ currentUser }
+      />
       <Header date={ date } lessons={ lessonsList } />
       { studentsPerformance.students.map((student, index) => (
         <TableBody
@@ -99,14 +102,18 @@ const Modal = ({
 
   return (
     <>
-      <TailImg
-        className={ styles.modalTail }
-        style={ coordinates }
-      />
       <div
+        id="modal"
         className={ styles.modal }
         style={ coordinates }
       >
+        <TailImg
+          className={ `
+            ${styles.modalTail}
+            ${styles.modalTailLeft}
+            ${styles.modalTailRight}
+          ` }
+        />
         <header>
           <h3 className={ styles.modalHeader }>Поставить отметку</h3>
         </header>

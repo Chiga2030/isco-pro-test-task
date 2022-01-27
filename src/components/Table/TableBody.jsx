@@ -18,7 +18,7 @@ const TableBody = ({
       </div>
       <div
         className={ styles.scoresSpace }
-        onPointerDown={ event => onGetElementPlaceAndUserData(
+        onPointerUp={ event => onGetElementPlaceAndUserData(
           event.target, student.name, student.performance.lessons[0].date) }
       >
         <BodyCell

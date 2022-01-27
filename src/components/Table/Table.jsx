@@ -32,7 +32,7 @@ const Table = ({
     setCurrentUser,
   ] = useState({});
 
-  const onGetElementPlace = (element, studentName, date) => {
+  const onGetElementPlaceAndUserData = (element, studentName, date) => {
     const width = element.offsetWidth;
     const height = element.offsetHeight;
     const halfWidth = width * .5;
@@ -123,7 +123,7 @@ const Table = ({
           lessons={ lessonsList.lessons.map(lessons => lessons.name) }
           student={ student }
           key={ String(index + Date.now()) }
-          onGetElementPlace={ onGetElementPlace }
+          onGetElementPlaceAndUserData={ onGetElementPlaceAndUserData }
         />
       )) }
     </div>

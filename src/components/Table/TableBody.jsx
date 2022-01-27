@@ -7,7 +7,7 @@ const TableBody = ({
   date,
   lessons,
   student,
-  onGetElementPlace,
+  onGetElementPlaceAndUserData,
 }) => {
   console.log();
 
@@ -18,7 +18,7 @@ const TableBody = ({
       </div>
       <div
         className={ styles.scoresSpace }
-        onPointerDown={ event => onGetElementPlace(
+        onPointerDown={ event => onGetElementPlaceAndUserData(
           event.target, student.name, student.performance.lessons[0].date) }
       >
         <BodyCell

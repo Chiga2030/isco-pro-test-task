@@ -97,6 +97,8 @@
   font-size: .9rem;
   letter-spacing: .045rem;
   margin-bottom: .9rem;
+  cursor: pointer;
+  width: fit-content;
 }
 
 .modalCheckbox {

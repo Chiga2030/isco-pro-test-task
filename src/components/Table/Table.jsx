@@ -2,6 +2,7 @@ import styles from './Table.module.css';
 
 import {
   useState,
+  useEffect,
 } from 'react';
 
 import Header from './Header';
@@ -16,7 +17,7 @@ import {
 
 const Table = ({
   date = '21.11.2021',
-  classesList,
+  lessonsList,
   studentsPerformance,
 }) => {
   const [
@@ -39,17 +40,18 @@ const Table = ({
     setCurrentUser({
       name: studentName,
       date: date,
+      score: element.innerText,
     });
   };
 
   return (
     <div className={ styles.wrapper }>
       <Modal coordinates={ coordinates } currentUser={ currentUser } />
-      <Header date={ date } classesList={ classesList } />
+      <Header date={ date } lessons={ lessonsList } />
       { studentsPerformance.students.map((student, index) => (
         <TableBody
           date={ date }
-          classesName={ classesList.classes.map(classes => classes.name) }
+          lessons={ lessonsList.lessons.map(lessons => lessons.name) }
           student={ student }
           key={ String(index + Date.now()) }
           onGetElementPlace={ onGetElementPlace }
@@ -68,6 +70,25 @@ const Modal = ({
     checkboxState,
     setCheckboxState,
   ] = useState(false);
+  const [
+    scoreState,
+    setScoreState,
+  ] = useState(' ');
+
+  useEffect(() => {
+    setScoreState(currentUser.score);
+  }, [
+    currentUser.score,
+  ]);
+
+  const onChangeInputHandler = event => {
+    const newValue = () => {
+      if (event.target.value.match(/^[1-5]$/)) {
+        return event.target.value;
+      } return 'Ошибка: нужно указать оценку от 1 до 5';
+    };
+    return setScoreState(newValue);
+  };
 
   return (
     <div
@@ -95,11 +116,13 @@ const Modal = ({
             name="studentName"
             value={ currentUser.name ? currentUser.name : false }
           />
+
           <input
             type="hidden"
             name="date"
             value={ currentUser.date ? currentUser.date : false }
           />
+
           <input
             type="checkbox"
             name="isNotAttendance"
@@ -117,6 +140,15 @@ const Modal = ({
               <NotMarkCheckboxImg className={ styles.modalCustomCheckbox } /> }
             Не присутствовал
           </label>
+
+          <input
+            className={ styles.modalInputScore }
+            type="text"
+            value={ scoreState ? scoreState : ' ' }
+            onChange={ event => onChangeInputHandler(event) }
+            onClick={ event => event.target.select() }
+            onKeyUp={ event => event.target.select() }
+          />
         </form>
       </main>
     </div>

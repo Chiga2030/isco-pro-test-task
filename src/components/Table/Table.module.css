@@ -44,11 +44,11 @@
   cursor: pointer;
 }
 
-.study {
+.lesson {
   flex-grow: 1;
 }
 
-.studyName {
+.lessonName {
   margin-right: .5rem;
   max-width: 6rem;
   overflow: hidden;
@@ -91,6 +91,7 @@
   display: flex;
   font-size: .9rem;
   letter-spacing: .045rem;
+  margin-bottom: .9rem;
 }
 
 .modalCheckbox {
@@ -99,4 +100,15 @@
 
 .modalCustomCheckbox {
   margin-right: .6rem;
+}
+
+.modalInputScore {
+  width: 100%;
+  box-sizing: border-box;
+  height: 3.6rem;
+  border-radius: .5rem;
+  border: 0;
+  box-shadow: 0 0 .5rem #00000080;
+  padding: 0 .9rem;
+  font-size: 1.2rem;
 }

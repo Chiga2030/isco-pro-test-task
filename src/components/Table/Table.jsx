@@ -53,6 +53,19 @@ const Table = ({
       const modalHeight = document.getElementById('modal').offsetHeight;
       const halfModalWidth = modalWidth * .5;
 
+      console.dir(element);
+      const cloneElement = element.cloneNode(true);
+
+      cloneElement.style.background = '#fff';
+      cloneElement.style.color = '#000';
+      cloneElement.style.position = 'absolute';
+      cloneElement.style.top = `${topSide - 6}px`;
+      cloneElement.style.left = `${leftSide - 6}px`;
+      cloneElement.style.height = `${height + 8}px`;
+      cloneElement.style.width = `${width + 8}px`;
+
+      document.body.appendChild(cloneElement);
+
 
       setCurrentUser({
         name: studentName,

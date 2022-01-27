@@ -22,6 +22,7 @@
   background: #fff;
   display: flex;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .headerCell {
@@ -56,7 +57,7 @@
 }
 
 .studentName {
-  min-width: 16rem;
+  min-width: 18rem;
   justify-content: start;
 }
 

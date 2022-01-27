@@ -38,17 +38,41 @@ const Table = ({
     // const height = element.offsetHeight;
     const width = element.offsetWidth;
 
-    setCoordinates({
-      left: `${pageX + width}px`,
-      top: `${pageY}px`,
-    });
-
 
     setCurrentUser({
       name: studentName,
       date: date,
       score: element.innerText,
     });
+
+    // console.log(document.getElementById('modal').offsetWidth);
+    const modalWidth = document.getElementById('modal').offsetWidth;
+    const displayWidth = document.documentElement.clientWidth;
+    const rightEdge = pageX + width + modalWidth;
+    const fromRightEdge = displayWidth - rightEdge;
+    // console.log('X - ', pageX + width + modalWidth);
+    // console.log('display width - ', document.documentElement.clientWidth);
+    if (fromRightEdge > 0) {
+      console.log('to right');
+
+      return setCoordinates({
+        modal: {
+          left: `${pageX + width}px`,
+          top: `${pageY}px`,
+        },
+        side: 'Left',
+      });
+    } else if (fromRightEdge < 0) {
+      console.log('to left');
+
+      return setCoordinates({
+        modal: {
+          left: `${pageX - modalWidth}px`,
+          top: `${pageY}px`,
+        },
+        side: 'Right',
+      });
+    }
   };
 
   return (
@@ -104,14 +128,16 @@ const Modal = ({
     <>
       <div
         id="modal"
-        className={ styles.modal }
-        style={ coordinates }
+        className={ `
+          ${styles.modal}
+          ${styles[`modalTransform${coordinates.side}`]}
+        ` }
+        style={ coordinates.modal }
       >
         <TailImg
           className={ `
             ${styles.modalTail}
-            ${styles.modalTailLeft}
-            ${styles.modalTailRight}
+            ${styles[`modalTail${coordinates.side}`]}
           ` }
         />
         <header>

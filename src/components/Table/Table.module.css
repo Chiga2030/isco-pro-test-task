@@ -60,6 +60,10 @@
   justify-content: start;
 }
 
+.modalHidden {
+  visibility: hidden;
+}
+
 .modal {
   --modal-width: 41.5rem;
   --modal-height: 17.5rem;

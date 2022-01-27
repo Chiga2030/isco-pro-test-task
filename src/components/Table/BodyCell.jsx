@@ -8,18 +8,18 @@ const BodyCell = ({
 }) => (
   <>
     { studentPerformance.classes
-      .filter((study, index) => (study.date === date
-        && study.name === classesName[index]))
-      .map((study, index) => (
+      .filter((lesson, index) => (lesson.date === date
+        && lesson.name === classesName[index]))
+      .map((lesson, index) => (
         <div
           className={ `
             ${styles.bodyCell}
-            ${styles.study}
+            ${styles.lesson}
             ${styles.studentScores}
           ` }
           key={ String(index + Date.now()) }
         >
-          { study.score }
+          { lesson.score }
         </div>)) }
   </>
 );

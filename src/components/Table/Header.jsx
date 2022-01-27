@@ -15,12 +15,12 @@ const Header = ({
       ФИО студента
     </div>
     { classesList.classes
-      .filter(study => study.date === date)
-      .map(stydy => (
+      .filter(lesson => lesson.date === date)
+      .map(lesson => (
         <HeaderCell
-          studyName={ stydy.name }
+          lessonName={ lesson.name }
           date={ date }
-          key={ stydy.name }
+          key={ lesson.name }
         />)) }
   </header>
 );

@@ -60,6 +60,11 @@
   justify-content: start;
 }
 
+.modalTail {
+  fill: #0e3232;
+  position: absolute;
+}
+
 .modal {
   position: absolute;
   background: #0e3232;

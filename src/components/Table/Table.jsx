@@ -33,12 +33,16 @@ const Table = ({
   ] = useState({});
 
   const onGetElementPlace = (element, studentName, date) => {
+    const pageX = element.offsetLeft;
+    const pageY = element.offsetTop;
+    // const height = element.offsetHeight;
+    const width = element.offsetWidth;
+
     setCoordinates({
-      pageX: element.offsetLeft,
-      pageY: element.offsetTop,
-      height: element.offsetHeight,
-      width: element.offsetWidth,
+      left: `${pageX + width}px`,
+      top: `${pageY}px`,
     });
+
 
     setCurrentUser({
       name: studentName,
@@ -97,17 +101,11 @@ const Modal = ({
     <>
       <TailImg
         className={ styles.modalTail }
-        style={{
-          left: `${coordinates.pageX + coordinates.width}px`,
-          top: `${coordinates.pageY}px`,
-        }}
+        style={ coordinates }
       />
       <div
         className={ styles.modal }
-        style={{
-          left: `${coordinates.pageX + coordinates.width}px`,
-          top: `${coordinates.pageY}px`,
-        }}
+        style={ coordinates }
       >
         <header>
           <h3 className={ styles.modalHeader }>Поставить отметку</h3>

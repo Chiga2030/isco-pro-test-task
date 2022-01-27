@@ -86,3 +86,17 @@
 .modalDate {
   font-weight: bold;
 }
+
+.modalLabel {
+  display: flex;
+  font-size: .9rem;
+  letter-spacing: .045rem;
+}
+
+.modalCheckbox {
+  display: none;
+}
+
+.modalCustomCheckbox {
+  margin-right: .6rem;
+}

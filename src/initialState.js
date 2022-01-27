@@ -107,7 +107,7 @@ export const initialPerformanceState = {
           {
             date: '21.11.2021',
             name: 'Экономическая теория',
-            score: 3,
+            score: 5,
           },
           {
             date: '21.11.2021',

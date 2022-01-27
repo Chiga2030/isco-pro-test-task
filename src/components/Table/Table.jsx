@@ -7,6 +7,12 @@ import {
 import Header from './Header';
 import TableBody from './TableBody';
 
+import {
+  ReactComponent as NotMarkCheckboxImg,
+} from './images/notMarkCheckbox.svg';
+import {
+  ReactComponent as MarkCheckboxImg,
+} from './images/markCheckbox.svg';
 
 const Table = ({
   date = '21.11.2021',
@@ -62,6 +68,11 @@ const Modal = ({
   currentUser,
 }) => {
   console.log();
+  const [
+    checkboxState,
+    setCheckboxState,
+  ] = useState(null);
+
   return (
     <div
       className={ styles.modal }
@@ -82,6 +93,26 @@ const Modal = ({
           <span>Дата</span>
           <span className={ styles.modalDate }>{ currentUser.score }</span>
         </p>
+        <form id="studentAccountingForm">
+          <input type="hidden" name="studentName" value={ currentUser.name }/>
+          <input type="hidden" name="score" value={ currentUser.score }/>
+          <input
+            type="checkbox"
+            name="isNotAttendance"
+            id="checkAttendance"
+            className={ styles.modalCheckbox }
+            onChange={ () => setCheckboxState(!checkboxState) }
+          />
+          <label
+            className={ styles.modalLabel }
+            htmlFor="checkAttendance"
+          >
+            { checkboxState ?
+              <MarkCheckboxImg className={ styles.modalCustomCheckbox } /> :
+              <NotMarkCheckboxImg className={ styles.modalCustomCheckbox } /> }
+            Не присутствовал
+          </label>
+        </form>
       </main>
     </div>
   );

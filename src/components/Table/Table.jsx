@@ -28,7 +28,7 @@ const Table = ({
     setCurrentUser,
   ] = useState({});
 
-  const onGetElementPlace = (element, studentName, score) => {
+  const onGetElementPlace = (element, studentName, date) => {
     setCoordinates({
       pageX: element.offsetLeft,
       pageY: element.offsetTop,
@@ -38,11 +38,8 @@ const Table = ({
 
     setCurrentUser({
       name: studentName,
-      score: score,
+      date: date,
     });
-
-    console.log(studentName);
-    console.log(score);
   };
 
   return (
@@ -67,11 +64,10 @@ const Modal = ({
   coordinates,
   currentUser,
 }) => {
-  console.log();
   const [
     checkboxState,
     setCheckboxState,
-  ] = useState(null);
+  ] = useState(false);
 
   return (
     <div
@@ -91,16 +87,25 @@ const Modal = ({
         </p>
         <p className={ styles.modalParagraphs }>
           <span>Дата</span>
-          <span className={ styles.modalDate }>{ currentUser.score }</span>
+          <span className={ styles.modalDate }>{ currentUser.date }</span>
         </p>
         <form id="studentAccountingForm">
-          <input type="hidden" name="studentName" value={ currentUser.name }/>
-          <input type="hidden" name="score" value={ currentUser.score }/>
+          <input
+            type="hidden"
+            name="studentName"
+            value={ currentUser.name ? currentUser.name : false }
+          />
+          <input
+            type="hidden"
+            name="date"
+            value={ currentUser.date ? currentUser.date : false }
+          />
           <input
             type="checkbox"
             name="isNotAttendance"
             id="checkAttendance"
             className={ styles.modalCheckbox }
+            checked={ checkboxState }
             onChange={ () => setCheckboxState(!checkboxState) }
           />
           <label

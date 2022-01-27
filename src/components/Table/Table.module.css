@@ -83,6 +83,10 @@
   transform: translate(calc(var(--transforn-lr-x) * -1), var(--transforn-lr-y));
 }
 
+.modalTransformDown {
+  transform: translateY(28px);
+}
+
 .modalTail {
   fill: #0e3232;
   position: absolute;
@@ -94,6 +98,10 @@
 
 .modalTailRight {
   transform: translate(calc(var(--modal-width) + 20px), 14px) rotate(180deg);
+}
+
+.modalTailDown {
+  transform: translate(calc(var(--modal-width) * .5 - 8px), -42px) rotate(90deg);
 }
 
 .modalHeader {

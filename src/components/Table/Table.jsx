@@ -35,7 +35,7 @@ const Table = ({
   const onGetElementPlace = (element, studentName, date) => {
     const pageX = element.offsetLeft;
     const pageY = element.offsetTop;
-    // const height = element.offsetHeight;
+    const height = element.offsetHeight;
     const width = element.offsetWidth;
 
 
@@ -62,7 +62,7 @@ const Table = ({
         },
         side: 'Left',
       });
-    } else if (fromRightEdge < 0) {
+    } else if (fromRightEdge < 0 && pageX > modalWidth) {
       console.log('to left');
 
       return setCoordinates({
@@ -71,6 +71,16 @@ const Table = ({
           top: `${pageY}px`,
         },
         side: 'Right',
+      });
+    } else if (fromRightEdge < 0 && pageX < modalWidth) {
+      console.log('to down');
+
+      return setCoordinates({
+        modal: {
+          left: `${pageX + (width * .5) - (modalWidth * .5)}px`,
+          top: `${pageY + height}px`,
+        },
+        side: 'Down',
       });
     }
   };

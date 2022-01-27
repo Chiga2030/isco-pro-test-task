@@ -63,6 +63,7 @@
 .modalTail {
   fill: #0e3232;
   position: absolute;
+  transform: translate(12px, 14px);
 }
 
 .modal {
@@ -74,6 +75,7 @@
   height: 17.5rem;
   width: 41.5rem;
   font-family: 'Manrope', sans-serif;
+  transform: translate(28px, -26px);
 }
 
 .modalHeader {

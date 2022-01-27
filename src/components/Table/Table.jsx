@@ -98,15 +98,15 @@ const Modal = ({
       <TailImg
         className={ styles.modalTail }
         style={{
-          left: `${coordinates.pageX + coordinates.width + 12}px`,
-          top: `${coordinates.pageY + 14}px`,
+          left: `${coordinates.pageX + coordinates.width}px`,
+          top: `${coordinates.pageY}px`,
         }}
       />
       <div
         className={ styles.modal }
         style={{
-          left: `${coordinates.pageX + coordinates.width + 28}px`,
-          top: `${coordinates.pageY - 26}px`,
+          left: `${coordinates.pageX + coordinates.width}px`,
+          top: `${coordinates.pageY}px`,
         }}
       >
         <header>

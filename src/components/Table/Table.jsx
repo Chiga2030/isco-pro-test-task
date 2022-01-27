@@ -33,10 +33,19 @@ const Table = ({
   ] = useState({});
 
   const onGetElementPlace = (element, studentName, date) => {
-    const pageX = element.offsetLeft;
-    const pageY = element.offsetTop;
-    const height = element.offsetHeight;
     const width = element.offsetWidth;
+    const height = element.offsetHeight;
+    const halfWidth = width * .5;
+
+    const leftSide = element.offsetLeft;
+    const rightSide = window.outerWidth - leftSide - width;
+
+    const topSide = element.offsetTop;
+    const bottomSide = window.outerHeight - topSide - height;
+
+    const modalWidth = document.getElementById('modal').offsetWidth;
+    const modalHeight = document.getElementById('modal').offsetHeight;
+    const halfModalWidth = modalWidth * .5;
 
 
     setCurrentUser({
@@ -45,60 +54,56 @@ const Table = ({
       score: element.innerText,
     });
 
-    // console.log(document.getElementById('modal').offsetWidth);
-    const modalWidth = document.getElementById('modal').offsetWidth;
-    const modalHeight = document.getElementById('modal').offsetHeight;
-    const displayWidth = document.documentElement.clientWidth;
-    const displayHeight = document.documentElement.clientHeight;
-    const rightEdge = pageX + width + modalWidth;
-    const fromRightEdge = displayWidth - rightEdge;
-    const headerHeight = 120;
-    // console.log('X - ', pageX + width + modalWidth);
-    // console.log('display width - ', document.documentElement.clientWidth);
-    if (fromRightEdge > 0) {
-      console.log('to right');
 
+    if (leftSide > rightSide && topSide < bottomSide) {
       return setCoordinates({
         modal: {
-          left: `${pageX + width}px`,
-          top: `${pageY}px`,
+          left: `${leftSide - modalWidth}px`,
+          top: `${topSide}px`,
         },
-        side: 'Left',
+        side: 'RightTop',
       });
-    } else if (fromRightEdge < 0 && pageX > modalWidth) {
-      console.log('to left');
-
+    } else if (leftSide > rightSide) {
       return setCoordinates({
         modal: {
-          left: `${pageX - modalWidth}px`,
-          top: `${pageY}px`,
+          left: `${leftSide - modalWidth}px`,
+          top: `${topSide - modalHeight + height}px`,
         },
-        side: 'Right',
+        side: 'RightBottom',
       });
-    } else if ((fromRightEdge < 0
-        && pageX < modalWidth
-        && displayHeight - pageY - headerHeight > modalHeight)
-        || (pageY - headerHeight < modalHeight)) {
-      console.log('to down');
-
+    } else if (leftSide < rightSide && modalWidth < rightSide
+      && topSide < bottomSide) {
       return setCoordinates({
         modal: {
-          left: `${pageX + (width * .5) - (modalWidth * .5)}px`,
-          top: `${pageY + height}px`,
+          left: `${leftSide + width}px`,
+          top: `${topSide}px`,
+        },
+        side: 'LeftTop',
+      });
+    } else if (leftSide < rightSide && modalWidth < rightSide
+      && topSide > bottomSide) {
+      return setCoordinates({
+        modal: {
+          left: `${leftSide + width}px`,
+          top: `${topSide - modalHeight + height}px`,
+        },
+        side: 'LeftBottom',
+      });
+    } else if (leftSide < rightSide && rightSide < modalWidth
+      && topSide < bottomSide) {
+      return setCoordinates({
+        modal: {
+          left: `${leftSide + halfWidth - halfModalWidth}px`,
+          top: `${topSide + height}px`,
         },
         side: 'Down',
       });
-    } else if (fromRightEdge < 0
-        && pageX < modalWidth
-        && (displayHeight - pageY - headerHeight) < modalHeight) {
-      console.log('to up');
-      console.log(displayHeight - pageY + headerHeight);
-      console.log(modalHeight);
-
+    } else if (rightSide > leftSide && modalWidth > leftSide
+      && topSide > bottomSide) {
       return setCoordinates({
         modal: {
-          left: `${pageX + (width * .5) - (modalWidth * .5)}px`,
-          top: `${pageY - modalHeight - (height * .5)}px`,
+          left: `${leftSide + halfWidth - halfModalWidth}px`,
+          top: `${topSide - modalHeight - (height * .5)}px`,
         },
         side: 'Up',
       });

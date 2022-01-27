@@ -76,12 +76,20 @@
   font-family: 'Manrope', sans-serif;
 }
 
-.modalTransformLeft {
+.modalTransformLeftTop {
   transform: translate(var(--transforn-lr-x), var(--transforn-lr-y));
 }
 
-.modalTransformRight {
+.modalTransformLeftBottom {
+  transform: translate(var(--transforn-lr-x), calc(var(--transforn-lr-y) * -1));
+}
+
+.modalTransformRightTop {
   transform: translate(calc(var(--transforn-lr-x) * -1), var(--transforn-lr-y));
+}
+
+.modalTransformRightBottom {
+  transform: translate(calc(var(--transforn-lr-x) * -1), calc(var(--transforn-lr-y) * -1));
 }
 
 .modalTransformDown {
@@ -93,12 +101,20 @@
   position: absolute;
 }
 
-.modalTailLeft {
+.modalTailLeftTop {
   transform: translate(-36px, 14px);
 }
 
-.modalTailRight {
+.modalTailLeftBottom {
+  transform: translate(-36px, calc(var(--modal-height) - 36px));
+}
+
+.modalTailRightTop {
   transform: translate(calc(var(--modal-width) + 20px), 14px) rotate(180deg);
+}
+
+.modalTailRightBottom {
+  transform: translate(calc(var(--modal-width) + 20px), calc(var(--modal-height) - 36px)) rotate(180deg);
 }
 
 .modalTailDown {

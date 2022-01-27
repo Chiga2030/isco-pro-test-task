@@ -165,6 +165,7 @@
   border: 0;
   background: #7671dd;
   color: #fff;
+  cursor: pointer;
   transition: transform .1s ease-in-out;
 }
 

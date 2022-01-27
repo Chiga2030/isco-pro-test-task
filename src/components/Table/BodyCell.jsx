@@ -3,13 +3,13 @@ import styles from './Table.module.css';
 
 const BodyCell = ({
   date,
-  classesName,
+  lessons,
   studentPerformance,
 }) => (
   <>
-    { studentPerformance.classes
+    { studentPerformance.lessons
       .filter((lesson, index) => (lesson.date === date
-        && lesson.name === classesName[index]))
+        && lesson.name === lessons[index]))
       .map((lesson, index) => (
         <div
           className={ `

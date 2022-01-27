@@ -4,7 +4,7 @@ export const initialPerformanceState = {
     {
       name: 'Васильева Анна Игоревна',
       performance: {
-        classes: [
+        lessons: [
           {
             date: '21.11.2021',
             name: 'Экономическая теория',
@@ -37,7 +37,7 @@ export const initialPerformanceState = {
     {
       name: 'Алейникова Вероника Дмитриевна',
       performance: {
-        classes: [
+        lessons: [
           {
             date: '21.11.2021',
             name: 'Экономическая теория',
@@ -70,7 +70,7 @@ export const initialPerformanceState = {
     {
       name: 'Алейникова Вероника Дмитриевна',
       performance: {
-        classes: [
+        lessons: [
           {
             date: '21.11.2021',
             name: 'Экономическая теория',
@@ -103,7 +103,7 @@ export const initialPerformanceState = {
     {
       name: 'Васильева Анна Игоревна',
       performance: {
-        classes: [
+        lessons: [
           {
             date: '21.11.2021',
             name: 'Экономическая теория',
@@ -136,7 +136,7 @@ export const initialPerformanceState = {
     {
       name: 'Алейникова Вероника Дмитриевна',
       performance: {
-        classes: [
+        lessons: [
           {
             date: '21.11.2021',
             name: 'Экономическая теория',
@@ -169,7 +169,7 @@ export const initialPerformanceState = {
     {
       name: 'Алейникова Вероника Дмитриевна',
       performance: {
-        classes: [
+        lessons: [
           {
             date: '21.11.2021',
             name: 'Экономическая теория',
@@ -202,8 +202,8 @@ export const initialPerformanceState = {
 };
 
 
-export const initialClassesListState = {
-  classes: [
+export const initialLessonsListState = {
+  lessons: [
     {
       date: '21.11.2021',
       name: 'Экономическая теория',

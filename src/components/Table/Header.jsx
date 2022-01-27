@@ -5,7 +5,7 @@ import HeaderCell from './HeaderCell';
 
 const Header = ({
   date,
-  classesList,
+  lessons,
 }) => (
   <header className={ styles.header }>
     <div className={ `
@@ -14,7 +14,7 @@ const Header = ({
     ` }>
       ФИО студента
     </div>
-    { classesList.classes
+    { lessons.lessons
       .filter(lesson => lesson.date === date)
       .map(lesson => (
         <HeaderCell

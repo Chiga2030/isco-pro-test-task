@@ -5,7 +5,7 @@ import BodyCell from './BodyCell';
 
 const TableBody = ({
   date,
-  classesName,
+  lessons,
   student,
   onGetElementPlace,
 }) => {
@@ -19,11 +19,11 @@ const TableBody = ({
       <div
         className={ styles.scoresSpace }
         onPointerDown={ event => onGetElementPlace(
-          event.target, student.name, student.performance.classes[0].date) }
+          event.target, student.name, student.performance.lessons[0].date) }
       >
         <BodyCell
           date={ date }
-          classesName={classesName}
+          lessons={lessons}
           studentPerformance={ student.performance }
         />
       </div>

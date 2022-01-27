@@ -62,6 +62,7 @@
 
 .modal {
   --modal-width: 41.5rem;
+  --modal-height: 17.5rem;
   --transforn-lr-x: 28px;
   --transforn-lr-y: -22px;
 
@@ -70,7 +71,7 @@
   color: #fff;
   padding: 1.3rem;
   border-radius: .5rem;
-  height: 17.5rem;
+  height: var(--modal-height);
   width: var(--modal-width);
   font-family: 'Manrope', sans-serif;
 }
@@ -102,6 +103,10 @@
 
 .modalTailDown {
   transform: translate(calc(var(--modal-width) * .5 - 8px), -40px) rotate(90deg);
+}
+
+.modalTailUp {
+  transform: translate(calc(var(--modal-width) * .5 - 8px), calc(var(--modal-height) + 14px)) rotate(-90deg);
 }
 
 .modalHeader {

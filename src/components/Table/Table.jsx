@@ -47,9 +47,12 @@ const Table = ({
 
     // console.log(document.getElementById('modal').offsetWidth);
     const modalWidth = document.getElementById('modal').offsetWidth;
+    const modalHeight = document.getElementById('modal').offsetHeight;
     const displayWidth = document.documentElement.clientWidth;
+    const displayHeight = document.documentElement.clientHeight;
     const rightEdge = pageX + width + modalWidth;
     const fromRightEdge = displayWidth - rightEdge;
+    const headerHeight = 120;
     // console.log('X - ', pageX + width + modalWidth);
     // console.log('display width - ', document.documentElement.clientWidth);
     if (fromRightEdge > 0) {
@@ -72,7 +75,10 @@ const Table = ({
         },
         side: 'Right',
       });
-    } else if (fromRightEdge < 0 && pageX < modalWidth) {
+    } else if ((fromRightEdge < 0
+        && pageX < modalWidth
+        && displayHeight - pageY - headerHeight > modalHeight)
+        || (pageY - headerHeight < modalHeight)) {
       console.log('to down');
 
       return setCoordinates({
@@ -81,6 +87,20 @@ const Table = ({
           top: `${pageY + height}px`,
         },
         side: 'Down',
+      });
+    } else if (fromRightEdge < 0
+        && pageX < modalWidth
+        && (displayHeight - pageY - headerHeight) < modalHeight) {
+      console.log('to up');
+      console.log(displayHeight - pageY + headerHeight);
+      console.log(modalHeight);
+
+      return setCoordinates({
+        modal: {
+          left: `${pageX + (width * .5) - (modalWidth * .5)}px`,
+          top: `${pageY - modalHeight - (height * .5)}px`,
+        },
+        side: 'Up',
       });
     }
   };

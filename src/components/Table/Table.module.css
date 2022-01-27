@@ -101,7 +101,7 @@
 }
 
 .modalTailDown {
-  transform: translate(calc(var(--modal-width) * .5 - 8px), -42px) rotate(90deg);
+  transform: translate(calc(var(--modal-width) * .5 - 8px), -40px) rotate(90deg);
 }
 
 .modalHeader {

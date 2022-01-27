@@ -37,82 +37,85 @@ const Table = ({
   ] = useState(false);
 
   const onGetElementPlaceAndUserData = (element, studentName, date) => {
-    const width = element.offsetWidth;
-    const height = element.offsetHeight;
-    const halfWidth = width * .5;
+    if (Array.prototype.some.call(
+      element.classList, name => name === styles.studentScores)) {
+      const width = element.offsetWidth;
+      const height = element.offsetHeight;
+      const halfWidth = width * .5;
 
-    const leftSide = element.offsetLeft;
-    const rightSide = window.outerWidth - leftSide - width;
+      const leftSide = element.offsetLeft;
+      const rightSide = window.outerWidth - leftSide - width;
 
-    const topSide = element.offsetTop;
-    const bottomSide = window.outerHeight - topSide - height;
+      const topSide = element.offsetTop;
+      const bottomSide = window.outerHeight - topSide - height;
 
-    const modalWidth = document.getElementById('modal').offsetWidth;
-    const modalHeight = document.getElementById('modal').offsetHeight;
-    const halfModalWidth = modalWidth * .5;
-
-
-    setCurrentUser({
-      name: studentName,
-      date: date,
-      score: element.innerText,
-    });
-
-    setShowModal(true);
+      const modalWidth = document.getElementById('modal').offsetWidth;
+      const modalHeight = document.getElementById('modal').offsetHeight;
+      const halfModalWidth = modalWidth * .5;
 
 
-    if (leftSide > rightSide && topSide < bottomSide) {
-      return setCoordinates({
-        modal: {
-          left: `${leftSide - modalWidth}px`,
-          top: `${topSide}px`,
-        },
-        side: 'RightTop',
+      setCurrentUser({
+        name: studentName,
+        date: date,
+        score: element.innerText,
       });
-    } else if (leftSide > rightSide) {
-      return setCoordinates({
-        modal: {
-          left: `${leftSide - modalWidth}px`,
-          top: `${topSide - modalHeight + height}px`,
-        },
-        side: 'RightBottom',
-      });
-    } else if (leftSide < rightSide && modalWidth < rightSide
-      && topSide < bottomSide) {
-      return setCoordinates({
-        modal: {
-          left: `${leftSide + width}px`,
-          top: `${topSide}px`,
-        },
-        side: 'LeftTop',
-      });
-    } else if (leftSide < rightSide && modalWidth < rightSide
-      && topSide > bottomSide) {
-      return setCoordinates({
-        modal: {
-          left: `${leftSide + width}px`,
-          top: `${topSide - modalHeight + height}px`,
-        },
-        side: 'LeftBottom',
-      });
-    } else if (leftSide < rightSide && rightSide < modalWidth
-      && topSide < bottomSide) {
-      return setCoordinates({
-        modal: {
-          left: `${leftSide + halfWidth - halfModalWidth}px`,
-          top: `${topSide + height}px`,
-        },
-        side: 'Down',
-      });
-    } else if (rightSide > leftSide && modalWidth > leftSide
-      && topSide > bottomSide) {
-      return setCoordinates({
-        modal: {
-          left: `${leftSide + halfWidth - halfModalWidth}px`,
-          top: `${topSide - modalHeight - (height * .5)}px`,
-        },
-        side: 'Up',
-      });
+
+      setShowModal(true);
+
+
+      if (leftSide > rightSide && topSide < bottomSide) {
+        return setCoordinates({
+          modal: {
+            left: `${leftSide - modalWidth}px`,
+            top: `${topSide}px`,
+          },
+          side: 'RightTop',
+        });
+      } else if (leftSide > rightSide) {
+        return setCoordinates({
+          modal: {
+            left: `${leftSide - modalWidth}px`,
+            top: `${topSide - modalHeight + height}px`,
+          },
+          side: 'RightBottom',
+        });
+      } else if (leftSide < rightSide && modalWidth < rightSide
+        && topSide < bottomSide) {
+        return setCoordinates({
+          modal: {
+            left: `${leftSide + width}px`,
+            top: `${topSide}px`,
+          },
+          side: 'LeftTop',
+        });
+      } else if (leftSide < rightSide && modalWidth < rightSide
+        && topSide > bottomSide) {
+        return setCoordinates({
+          modal: {
+            left: `${leftSide + width}px`,
+            top: `${topSide - modalHeight + height}px`,
+          },
+          side: 'LeftBottom',
+        });
+      } else if (leftSide < rightSide && rightSide < modalWidth
+        && topSide < bottomSide) {
+        return setCoordinates({
+          modal: {
+            left: `${leftSide + halfWidth - halfModalWidth}px`,
+            top: `${topSide + height}px`,
+          },
+          side: 'Down',
+        });
+      } else if (rightSide > leftSide && modalWidth > leftSide
+        && topSide > bottomSide) {
+        return setCoordinates({
+          modal: {
+            left: `${leftSide + halfWidth - halfModalWidth}px`,
+            top: `${topSide - modalHeight - (height * .5)}px`,
+          },
+          side: 'Up',
+        });
+      }
     }
   };
 

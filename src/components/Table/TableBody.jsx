@@ -10,14 +10,15 @@ const TableBody = ({
     onPointerUp={ event => onGetElementPlaceAndUserData(
       event.target, students.name, date) }
   >
-    { students.map(student => (
-      <div className={ styles.bodyRow }>
+    { students.map((student, index) => (
+      <div className={ styles.bodyRow } key={ index }>
         <div className={ `${styles.bodyCell} ${styles.studentName}` }>
           { student.name }
         </div>
 
-        {student.performance.lessons.map(lesson => (
+        {student.performance.lessons.map((lesson, index) => (
           <div
+            key={ index }
             className={ `
               ${styles.bodyCell}
               ${styles.lesson}

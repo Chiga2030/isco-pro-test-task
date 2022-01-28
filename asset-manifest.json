@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/isco-pro-test-task/static/css/main.9eb6eb4b.css",
+    "main.js": "/isco-pro-test-task/static/js/main.c9e97dc5.js",
+    "index.html": "/isco-pro-test-task/index.html",
+    "static/media/markCheckbox.svg": "/isco-pro-test-task/static/media/markCheckbox.fee5c3f95fb30b2e0a2306754931a445.svg",
+    "static/media/tail.svg": "/isco-pro-test-task/static/media/tail.5b6ae8638372946c4981ab5207c57f7b.svg",
+    "static/media/notMarkCheckbox.svg": "/isco-pro-test-task/static/media/notMarkCheckbox.55e9d25e460f34537346318c1cd20d79.svg",
+    "main.9eb6eb4b.css.map": "/isco-pro-test-task/static/css/main.9eb6eb4b.css.map",
+    "main.c9e97dc5.js.map": "/isco-pro-test-task/static/js/main.c9e97dc5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9eb6eb4b.css",
+    "static/js/main.c9e97dc5.js"
+  ]
+}

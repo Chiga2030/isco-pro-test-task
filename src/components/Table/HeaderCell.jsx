@@ -2,14 +2,14 @@ import styles from './Table.module.css';
 
 
 const HeaderCell = ({
-  studyName,
+  lessonName,
   date,
 }) => (
   <div className={ `
     ${styles.headerCell}
-    ${styles.study}
+    ${styles.lesson}
   ` }>
-    <span className={ styles.studyName }>{ studyName }</span>
+    <span className={ styles.lessonName }>{ lessonName }</span>
     <span>{ date }</span>
   </div>
 );

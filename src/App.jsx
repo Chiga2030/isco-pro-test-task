@@ -1,7 +1,7 @@
 import Table from './components/Table/Table';
 
 import {
-  initialClassesListState as responseClassesList,
+  initialLessonsListState as responseLessonsList,
   initialPerformanceState as responsePerformance,
 } from './initialState';
 
@@ -9,10 +9,11 @@ import {
 const App = () => (
   <div>
     <Table
-      classesList={ responseClassesList }
+      lessonsList={ responseLessonsList }
       studentsPerformance={ responsePerformance }
     />
   </div>
 );
+
 
 export default App;

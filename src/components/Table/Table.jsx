@@ -27,9 +27,12 @@ const Table = ({
     setShowModal,
   ] = useState(false);
 
-  const onGetElementPlaceAndUserData = (element, studentName, date) => {
+  const onGetElementPlaceAndUserData = (element, date) => {
     if (Array.prototype.some.call(
       element.classList, name => name === styles.studentScores)) {
+      const studentName = element.parentElement.firstChild.innerText;
+
+
       const width = element.offsetWidth;
       const height = element.offsetHeight;
       const halfWidth = width * .5;

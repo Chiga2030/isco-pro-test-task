@@ -8,7 +8,7 @@ const TableBody = ({
   <div
     className={ `${styles.tableBody} ${styles.scoresSpace}` }
     onPointerUp={ event => onGetElementPlaceAndUserData(
-      event.target, students.name, date) }
+      event.target, date) }
   >
     { students.map((student, index) => (
       <div className={ styles.bodyRow } key={ index }>

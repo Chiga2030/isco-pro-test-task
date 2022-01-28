@@ -3,6 +3,7 @@
   width: fit-content;
   padding: .2rem;
   margin: auto;
+  font-size: .9rem;
 }
 
 .header,
@@ -20,10 +21,10 @@
 
 .headerCell,
 .bodyCell {
-  padding: 1rem;
+  padding: .8rem;
   margin: .1rem;
   margin-right: .05rem;
-  background: #fff;
+  background: var(--color-light);
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
@@ -48,8 +49,8 @@
 }
 
 .studentScores:hover {
-  background: #7671dd;
-  color: #fff;
+  background: var(--color-clickable);
+  color: var(--color-light);
   font-weight: bold;
   cursor: pointer;
 }

@@ -1,0 +1,11 @@
+:root {
+  --color-light: #fff;
+  --color-clickable: #7671dd;
+  --color-active: #3934a3;
+  --text-color-main: #2e2e3d;
+  --text-color-light: #fff;
+}
+
+body {
+  font-family: 'manrope', sans-serif;
+}

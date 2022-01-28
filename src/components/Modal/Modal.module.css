@@ -26,8 +26,8 @@
   --transforn-lr-y: -22px;
 
   position: absolute;
-  background: #0e3232;
-  color: #fff;
+  background: var(--color-light);
+  color: var(--text-color-main);
   padding: 1.3rem;
   border-radius: .5rem;
   height: var(--modal-height);
@@ -56,7 +56,7 @@
 }
 
 .modalTail {
-  fill: #0e3232;
+  fill: var(--color-light);
   position: absolute;
 }
 
@@ -143,14 +143,14 @@
   font-size: 1rem;
   font-weight: bold;
   border: 0;
-  background: #7671dd;
-  color: #fff;
+  background: var(--color-clickable);
+  color: var(--text-color-light);
   cursor: pointer;
   transition: transform .1s ease-in-out;
 }
 
 .modalButton:hover {
-  background: #3934a3;
+  background: var(--color-active);
 }
 
 .modalButton:active {

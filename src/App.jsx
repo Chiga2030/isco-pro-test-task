@@ -1,3 +1,5 @@
+import './root-css.css';
+
 import Table from './components/Table/Table';
 
 import {

@@ -23,7 +23,7 @@
   padding: 1rem;
   margin: .1rem;
   margin-right: .05rem;
-  background: #fff;
+  background: var(--color-light);
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
@@ -48,8 +48,8 @@
 }
 
 .studentScores:hover {
-  background: #7671dd;
-  color: #fff;
+  background: var(--color-clickable);
+  color: var(--color-light);
   font-weight: bold;
   cursor: pointer;
 }

@@ -10,6 +10,10 @@
   display: flex;
 }
 
+.tableBody {
+  flex-direction: column;
+}
+
 .header {
   height: 5.6rem;
 }
@@ -32,6 +36,10 @@
 .scoresSpace {
   display: flex;
   width: 100%;
+}
+
+.bodyRow {
+  display: flex;
 }
 
 .bodyCell {

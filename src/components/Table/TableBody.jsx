@@ -1,35 +1,37 @@
 import styles from './Table.module.css';
 
-import BodyCell from './BodyCell';
-
-
 const TableBody = ({
   date,
-  lessons,
-  student,
+  students,
   onGetElementPlaceAndUserData,
-}) => {
-  console.log();
+}) => (
+  <div
+    className={ `${styles.tableBody} ${styles.scoresSpace}` }
+    onPointerUp={ event => onGetElementPlaceAndUserData(
+      event.target, students.name, date) }
+  >
+    { students.map(student => (
+      <div className={ styles.bodyRow }>
+        <div className={ `${styles.bodyCell} ${styles.studentName}` }>
+          { student.name }
+        </div>
 
-  return (
-    <div className={ styles.tableBody }>
-      <div className={ `${styles.bodyCell} ${styles.studentName}` }>
-        { student.name }
+        {student.performance.lessons.map(lesson => (
+          <div
+            className={ `
+              ${styles.bodyCell}
+              ${styles.lesson}
+              ${styles.studentScores}
+            ` }
+          >
+            { lesson.score }
+          </div>
+        ))}
       </div>
-      <div
-        className={ styles.scoresSpace }
-        onPointerUp={ event => onGetElementPlaceAndUserData(
-          event.target, student.name, student.performance.lessons[0].date) }
-      >
-        <BodyCell
-          date={ date }
-          lessons={lessons}
-          studentPerformance={ student.performance }
-        />
-      </div>
-    </div>
-  );
-};
+    )) }
+
+  </div>
+);
 
 
 export default TableBody;

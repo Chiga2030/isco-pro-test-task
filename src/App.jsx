@@ -1,4 +1,5 @@
-import './root-css.css';
+import './index.css';
+import './fonts/fonts.css';
 
 import Table from './components/Table/Table';
 

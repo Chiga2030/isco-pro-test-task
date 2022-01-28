@@ -3,6 +3,7 @@
   width: fit-content;
   padding: .2rem;
   margin: auto;
+  font-size: .9rem;
 }
 
 .header,
@@ -20,7 +21,7 @@
 
 .headerCell,
 .bodyCell {
-  padding: 1rem;
+  padding: .8rem;
   margin: .1rem;
   margin-right: .05rem;
   background: var(--color-light);

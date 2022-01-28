@@ -1,16 +1,22 @@
 {
   "files": {
-    "main.css": "/isco-pro-test-task/static/css/main.9eb6eb4b.css",
-    "main.js": "/isco-pro-test-task/static/js/main.c9e97dc5.js",
+    "main.css": "/isco-pro-test-task/static/css/main.4f62cdb4.css",
+    "main.js": "/isco-pro-test-task/static/js/main.b9a5a676.js",
+    "static/media/manrope-regular.ttf": "/isco-pro-test-task/static/media/manrope-regular.b1d694f660569a9a9ee6.ttf",
+    "static/media/manrope-bold.ttf": "/isco-pro-test-task/static/media/manrope-bold.bf52bb7e7aa3e1e99ab5.ttf",
+    "static/media/manrope-bold.woff": "/isco-pro-test-task/static/media/manrope-bold.749bf4d489e4767ea2e8.woff",
+    "static/media/manrope-regular.woff": "/isco-pro-test-task/static/media/manrope-regular.6953e66f1d3d39ae44e8.woff",
+    "static/media/manrope-bold.woff2": "/isco-pro-test-task/static/media/manrope-bold.9debfa59c5c7e476a9f8.woff2",
+    "static/media/manrope-regular.woff2": "/isco-pro-test-task/static/media/manrope-regular.b2ae616a838a71413756.woff2",
     "index.html": "/isco-pro-test-task/index.html",
     "static/media/markCheckbox.svg": "/isco-pro-test-task/static/media/markCheckbox.fee5c3f95fb30b2e0a2306754931a445.svg",
     "static/media/tail.svg": "/isco-pro-test-task/static/media/tail.5b6ae8638372946c4981ab5207c57f7b.svg",
     "static/media/notMarkCheckbox.svg": "/isco-pro-test-task/static/media/notMarkCheckbox.55e9d25e460f34537346318c1cd20d79.svg",
-    "main.9eb6eb4b.css.map": "/isco-pro-test-task/static/css/main.9eb6eb4b.css.map",
-    "main.c9e97dc5.js.map": "/isco-pro-test-task/static/js/main.c9e97dc5.js.map"
+    "main.4f62cdb4.css.map": "/isco-pro-test-task/static/css/main.4f62cdb4.css.map",
+    "main.b9a5a676.js.map": "/isco-pro-test-task/static/js/main.b9a5a676.js.map"
   },
   "entrypoints": [
-    "static/css/main.9eb6eb4b.css",
-    "static/js/main.c9e97dc5.js"
+    "static/css/main.4f62cdb4.css",
+    "static/js/main.b9a5a676.js"
   ]
 }

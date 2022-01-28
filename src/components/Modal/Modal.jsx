@@ -37,6 +37,16 @@ const Modal = ({
     currentUser.score,
   ]);
 
+  useEffect(() => {
+    if (currentUser.element) {
+      currentUser.element.classList.add(styles.modalScale);
+
+      return () => currentUser.element.classList.remove(styles.modalScale);
+    }
+  }, [
+    currentUser.element,
+  ]);
+
   const onChangeInputHandler = event => {
     const newValue = () => {
       if (event.target.value.match(/^[1-5]$/)) {
@@ -46,13 +56,18 @@ const Modal = ({
     return setScoreState(newValue);
   };
 
+  const onShowToggleHandler = () => {
+    currentUser.element.classList.remove(styles.modalScale);
+    onShowToggle(!isShow);
+  };
+
   return (
     <>
       <div
         className={ `
           ${styles.modalDarkLayer}
           ${isShow ? false : styles.modalDarkLayerHidden}` }
-        onPointerUp={ () => onShowToggle(!isShow) }
+        onPointerUp={ onShowToggleHandler }
       >
       </div>
       <div

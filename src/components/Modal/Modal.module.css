@@ -1,3 +1,7 @@
+.modalScale {
+  transform: scale(1.1);
+}
+
 .modalDarkLayer {
   background: #0003;
   position: fixed;

@@ -57,13 +57,14 @@ const Table = ({
 
       // document.body.appendChild(cloneElement);
 
-      element.style.transform = 'scale(1.1)';
+      // element.style.transform = 'scale(1.1)';
 
 
       setCurrentUser({
         name: studentName,
         date: date,
         score: element.innerText,
+        element: element,
       });
 
       setShowModal(true);

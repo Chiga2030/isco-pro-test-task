@@ -55,7 +55,8 @@ const Table = ({
       setShowModal(true);
 
 
-      if (leftSide > rightSide && topSide < bottomSide) {
+      if (leftSide > rightSide && topSide < bottomSide
+        && modalWidth < leftSide) {
         return setCoordinates({
           modal: {
             left: `${leftSide - modalWidth}px`,
@@ -63,7 +64,7 @@ const Table = ({
           },
           side: 'RightTop',
         });
-      } else if (leftSide > rightSide) {
+      } else if (leftSide > rightSide && modalWidth < leftSide) {
         return setCoordinates({
           modal: {
             left: `${leftSide - modalWidth}px`,
@@ -89,8 +90,9 @@ const Table = ({
           },
           side: 'LeftBottom',
         });
-      } else if (leftSide < rightSide && rightSide < modalWidth
-        && topSide < bottomSide) {
+      } else if ((leftSide < rightSide && rightSide < modalWidth
+        && topSide < bottomSide)
+        || (leftSide < modalWidth && topSide < bottomSide)) {
         return setCoordinates({
           modal: {
             left: `${leftSide + halfWidth - halfModalWidth}px`,
@@ -98,8 +100,9 @@ const Table = ({
           },
           side: 'Down',
         });
-      } else if (rightSide > leftSide && modalWidth > leftSide
-        && topSide > bottomSide) {
+      } else if ((rightSide > leftSide && modalWidth > leftSide
+          && topSide > bottomSide)
+          || (leftSide < modalWidth && topSide > bottomSide)) {
         return setCoordinates({
           modal: {
             left: `${leftSide + halfWidth - halfModalWidth}px`,
